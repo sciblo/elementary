@@ -10,18 +10,19 @@ public class MyApp : Gtk.Application {
     protected override void activate () {
 
 
-        var main_window = new Gtk.ApplicationWindow(this);
-        main_window.default_height = 300;
-        main_window.default_width = 300;
-        main_window.title = "Hello World";
-        
+        var main_window = new Gtk.ApplicationWindow(this);      //Создаём окно
+        main_window.default_height = 300;       //Высота окна 300px
+        main_window.default_width = 300;        //Ширина окна 300px
+        main_window.title = "Hello World";      //Название окна
 
-        var button_hello = new Gtk.Button.with_label("Click me!");
-        button_hello.margin = 12;
-        button_hello.clicked.connect(() => {
-            button_hello.label = "Hello World!";
-            button_hello.sensitive = false;
+
+        var button_hello = new Gtk.Button.with_label("Click me!");      //Создаём кнопку с надписью
+        button_hello.margin = 12;                                       //Отступ 12px со всех сторон
+        button_hello.clicked.connect(() => {                            //Функция выполняемая при нажатии на кнопку
+            button_hello.label = "Hello World!";    //После нажатия на кнопку на ней меняется надпись            
+            button_hello.sensitive = false;         //После нажатия кнопка становится неактивной
         });
+        
         main_window.add(button_hello);
 
         main_window.show_all();
